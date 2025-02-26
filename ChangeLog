@@ -6,3 +6,5 @@
 	* Enabled the 'make deb' target.
 2025-02-26 Fred Gleason <fredg@paravelsystems.com>
 	* Updated the 'README' and 'INSTALL' files.
+2025-02-26 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 1.0.0rc0
