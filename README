@@ -1,6 +1,10 @@
 This is the README file for the DropboxConveyor package.
 
+This software comes with ABSOLUTELY NO WARRANTY. See the file COPYING
+for details.
+
 DropboxConveyor is service for Rivendell systems that make it possible to
 obtain single-threaded access to a store of audio files hosted on one or
 more CIFS shares, for the purpose of processing such files through the
 Rivendell dropbox facility.
+

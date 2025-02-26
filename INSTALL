@@ -1,7 +1,9 @@
 This is the INSTALL file for the DropboxConveyor package.
 
-DropboxConveyor is a simple service transports files from remote source
-to a directory on the local system.
+DropboxConveyor is service for Rivendell systems that make it possible to
+obtain single-threaded access to a store of audio files hosted on one or
+more CIFS shares, for the purpose of processing such files through the
+Rivendell dropbox facility.
 
 MANDATORY PREREQUISITES
 ---------------------------------------------------------------------------

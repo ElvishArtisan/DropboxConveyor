@@ -4,3 +4,5 @@
 	* Updated the 'README' file.
 2025-02-26 Fred Gleason <fredg@paravelsystems.com>
 	* Enabled the 'make deb' target.
+2025-02-26 Fred Gleason <fredg@paravelsystems.com>
+	* Updated the 'README' and 'INSTALL' files.
