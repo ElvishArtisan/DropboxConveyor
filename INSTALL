@@ -1,0 +1,39 @@
+This is the INSTALL file for the DropboxConveyor package.
+
+DropboxConveyor is a simple service transports files from remote source
+to a directory on the local system.
+
+MANDATORY PREREQUISITES
+---------------------------------------------------------------------------
+You will need the following installed and configured properly on your
+system before building x11vnc-auto:
+
+Qt6 Toolkit, development toolkit, v6.2.4 or higher. See
+https://www.qt.io/product/qt6
+
+Building the Package
+--------------------
+Once the prereequites have been installed, the package can be built by means
+of the following commands:
+
+./configure
+make
+make install
+
+Distro-Specific Notes
+---------------------
+1) Ubuntu 22.02 LTS
+
+Required build packages: libsndfile1-dev qt6-base-dev docbook5-xml libxml2-utils docbook-xsl-ns xsltproc fop make g++ autoconf automake debhelper autoconf-archive gnupg pbuilder ubuntu-dev-tools apt-file libxtst-dev libvncserver-dev xfce4-genmon-plugin tightvncserver
+
+Configure script invocation: ./configure --prefix=/usr --bindir=/usr/lib/x11vnc-auto
+
+Environmental variables:
+  DOCBOOK_STYLESHEETS=/usr/share/xml/docbook/stylesheet/docbook-xsl-ns
+  DEBUILD_MAKE_ARGS=<optional-gcc-flags>
+
+Due to a bug in the Ubuntu 'qt6-base-dev-tools', it may be necessary to
+define the following environmental variable to allow Qt's moc(1) utility
+to be found by the build system:
+
+  QT6_MOC=/usr/lib/qt6/libexec/moc
