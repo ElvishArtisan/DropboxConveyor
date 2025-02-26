@@ -1,5 +1,5 @@
 #!/bin/sh
-# prerm script for x11vnc-auto
+# prerm script for dropbox-conveyor
 #
 # see: dh_installdeb(1)
 
@@ -19,8 +19,8 @@ set -e
 
 case "$1" in
     remove|upgrade|deconfigure)
-        systemctl disable x11vnc-auto.socket
-	systemctl stop x11vnc-auto.socket
+	systemctl stop dbconvd.service
+        systemctl disable dbconvd.service
     ;;
 
     failed-upgrade)

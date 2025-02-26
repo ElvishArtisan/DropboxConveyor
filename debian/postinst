@@ -1,11 +1,14 @@
 #!/bin/sh
-# postinst script for x11vnc-auto
+# postinst script for dropbox-conveyor
 
 case "$1" in
     configure)
+      if test ! -e /etc/dbconvd.conf ; then
+	  cp /usr/share/dropbox-conveyor/dbconvd-sample.conf /etc/dbconvd.conf
+      fi
       /bin/systemctl daemon-reload
-      /bin/systemctl enable x11vnc-auto.socket
-      /bin/systemctl start x11vnc-auto.socket
+      /bin/systemctl enable dbconvd.service
+      /bin/systemctl start dbconvd.service
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

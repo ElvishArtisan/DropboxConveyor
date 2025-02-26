@@ -1,17 +1,18 @@
-Source: x11vnc-auto
+Source: dropbox-conveyor
 Section: unknown
 Priority: optional
 Maintainer: Fred Gleason <fredg@paravelsystems.com>
 Build-Depends: debhelper-compat (= 12), autotools-dev
 Standards-Version: 4.4.1
-Homepage: https://github.com/ElvishArtisan/x11vnc-auto
+Homepage: https://github.com/ElvishArtisan/DropboxConveyor
 
-Package: x11vnc-auto
+Package: dropbox-conveyor
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, tightvncserver
-Description: Automatic VNC login for display :0
- x11vnc-auto is a utility that provides the ability to configure an
- integrated VNC server that will start automatically at boot time and
- provide access to display :0. It also includes an applet that can monitor
- the existing viewer connections and kick undesired instances.
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Service for providing single-threaded access to a file store
+ DropboxConveyor is service for Rivendell systems that make it possible to
+ obtain single-threaded access to a store of audio files hosted on one or
+ more CIFS shares, for the purpose of processing such files through the
+ Rivendell dropbox facility.
+
 

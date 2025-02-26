@@ -18,11 +18,11 @@
 ## Use automake to process this into a Makefile.in
 
 install-exec-local:	
-	mkdir -p $(DESTDIR)@prefix@/share/dropboxconveyor
-	cp dbconvd-sample.conf $(DESTDIR)@prefix@/share/dropboxconveyor/
+	mkdir -p $(DESTDIR)@prefix@/share/dropbox-conveyor
+	cp dbconvd-sample.conf $(DESTDIR)@prefix@/share/dropbox-conveyor/
 
 uninstall-local:	
-	rm -f $(DESTDIR)@prefix@/share/dropboxconveyor/dbconvd-sample.conf
+	rm -f $(DESTDIR)@prefix@/share/dropbox-conveyor/dbconvd-sample.conf
 
 EXTRA_DIST = dbconvd-sample.conf
 

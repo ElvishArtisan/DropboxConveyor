@@ -1,5 +1,5 @@
 #!/bin/sh
-# postrm script for x11vnc-auto
+# postrm script for dropbox-conveyor
 #
 # see: dh_installdeb(1)
 

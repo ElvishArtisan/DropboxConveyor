@@ -28,18 +28,9 @@ SUBDIRS = conf\
 deb:	dist
 	./build_debs.sh
 
-rpm:	dist
-	mkdir -p $(HOME)/rpmbuild/SOURCES
-	cp dropboxconveyor-$(VERSION).tar.gz $(HOME)/rpmbuild/SOURCES/
-	$(RPMBUILD) -ba --target noarch-$(VENDOR)-linux dropboxconveyor.spec
-	mv $(HOME)/rpmbuild/RPMS/noarch/dropboxconveyor-*.rpm $(top_srcdir)/
-	mv $(HOME)/rpmbuild/SRPMS/dropboxconveyor-*.src.rpm $(top_srcdir)/
-	rm $(HOME)/rpmbuild/SOURCES/dropboxconveyor-$(VERSION).tar.gz
-
 EXTRA_DIST = build_debs.sh.in\
              get_distro.pl\
              get_target.sh\
-             dropboxconveyor.spec.in\
              PACKAGE_VERSION
 
 CLEANFILES = *~\
@@ -52,7 +43,7 @@ CLEANFILES = *~\
              *.exe\
              *.mo\
              *.rpm\
-             dropboxconveyor*.tar.gz\
+             dropbox-conveyor*.tar.gz\
              *.tar.xz\
              *.tgz\
              *.zip

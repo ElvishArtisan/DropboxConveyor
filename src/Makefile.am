@@ -40,8 +40,6 @@ nodist_dbconvd_SOURCES = moc_dbconvd.cpp
 
 dbconvd_LDADD = @QT6_LIBS@
 
-EXTRA_DIST = paths.h.in
-
 CLEANFILES = *~\
              moc_*\
              *.obj\

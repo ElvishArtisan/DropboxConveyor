@@ -1,8 +1,8 @@
-## automake.am
+## Makefile.am
 ##
-## Automake.am for GlassPlayer debian/source
+## Makefile.am for dropbox-conveyor debian/source
 ##
-##   (C) Copyright 2021 Fred Gleason <fredg@paravelsystems.com>
+##   (C) Copyright 2025 Fred Gleason <fredg@paravelsystems.com>
 ##
 ##   This program is free software; you can redistribute it and/or modify
 ##   it under the terms of the GNU General Public License as

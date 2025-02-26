@@ -1,8 +1,8 @@
 ## automake.am
 ##
-## Automake.am for x11vnc-auto debian/
+## Automake.am for dropbox-conveyor debian/
 ##
-##   (C) Copyright 2021-2022 Fred Gleason <fredg@paravelsystems.com>
+##   (C) Copyright 2025 Fred Gleason <fredg@paravelsystems.com>
 ##
 ##   This program is free software; you can redistribute it and/or modify
 ##   it under the terms of the GNU General Public License as
@@ -29,8 +29,8 @@ EXTRA_DIST = changelog\
              copyright\
              postinst\
              postrm\
-             prerm\
              rules
 
 MAINTAINERCLEANFILES = changelog\
-                       control
+                       control\
+                       Makefile.in

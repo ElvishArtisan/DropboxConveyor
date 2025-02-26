@@ -9,7 +9,7 @@ dnl
 dnl   All Rights Reserved.
 dnl
 
-AC_INIT(dropboxconveyor,m4_esyscmd(cat PACKAGE_VERSION))
+AC_INIT(dropbox-conveyor,m4_esyscmd(cat PACKAGE_VERSION))
 AM_INIT_AUTOMAKE
 AC_SUBST(RPM_RELEASE,1)
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])

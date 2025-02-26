@@ -20,11 +20,11 @@
 #   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #
 
-tar -zvxf dropboxconveyor-@VERSION@.tar.gz
-mv dropboxconveyor-@VERSION@.tar.gz dropboxconveyor_@VERSION@.orig.tar.gz
+tar -zvxf dropbox-conveyor-@VERSION@.tar.gz
+mv dropbox-conveyor-@VERSION@.tar.gz dropbox-conveyor_@VERSION@.orig.tar.gz
 
-cd dropboxconveyor-@VERSION@
+cd dropbox-conveyor-@VERSION@
 dpkg-buildpackage -us -uc
 cd ..
 
-rm -rf dropboxconveyor-@VERSION@
+rm -rf dropbox-conveyor-@VERSION@
