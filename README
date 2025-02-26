@@ -1,6 +1,6 @@
-This is the README file for the x11vnc-auto package.
+This is the README file for the DropboxConveyor package.
 
-X11vnc-auto implements a service for providing VNC access to the local
-X11 display (:0) by means of the x11vnc(1) utility. Also provided is
-a plug-in for the XFCE4 desktop that provides monitoring of existing VNC
-connections and the ability to 'kick' (terminate) undesired connections.
+DropboxConveyor is service for Rivendell systems that make it possible to
+obtain single-threaded access to a store of audio files hosted on one or
+more CIFS shares, for the purpose of processing such files through the
+Rivendell dropbox facility.
