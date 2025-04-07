@@ -1,6 +1,10 @@
 This is the NEWS file for the dropbox-conveyor package.
 
 -----------------------------------------------------------------------------
+v1.0.0rc1 - 7 April 2025
+
+Cleaned up spam in the syslog.
+-----------------------------------------------------------------------------
 v1.0.0rc0 - 26 February 2025
 
 Initial test release.
