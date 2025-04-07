@@ -187,8 +187,6 @@ bool MainObject::Run(const QString &pgm,const QStringList &args)
 
 bool MainObject::IsMounted(const QString &mntpt)
 {
-  printf("IsMounted(\"%s\"): ",mntpt.toUtf8().constData());
-  
   FILE *f=NULL;
   char line[1024];
   
