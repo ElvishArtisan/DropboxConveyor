@@ -4,3 +4,6 @@ Description=Dropbox File Conveyor
 [Service]
 ExecStart=@prefix@/bin/dbconvd
 Type=simple
+
+[Install]
+WantedBy=multi-user.target
