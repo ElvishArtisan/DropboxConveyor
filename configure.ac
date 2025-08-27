@@ -59,7 +59,7 @@ if test -z $REQUIRE_QT5 ; then
 fi
 if test -z $USING_QT6 ; then
   PKG_CHECK_MODULES(QT,Qt5Core Qt5Gui Qt5Widgets Qt5Network,[],[AC_MSG_ERROR([*** Qt5 not found ***])])
-  AC_SUBST(QT_STD_ARGS,-std=c++14)
+  AC_SUBST(QT_STD_ARGS,-std=c++11)
   AC_CHECK_PROG(MOC_NAME,moc-qt5,[moc-qt5],[moc])
   AC_SUBST(QT_MOC,$MOC_NAME)
   USING_QT5=yes

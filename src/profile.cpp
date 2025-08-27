@@ -67,7 +67,7 @@ bool Profile::addSource(const QStringList &values)
     }
     else {
       if((!line.isEmpty())&&(line.left(1)!=";")&&(line.left(1)!="#")) {
-	QStringList f0=line.split("=",Qt::KeepEmptyParts);
+	QStringList f0=line.split("=",QString::KeepEmptyParts);
 	QString tag=f0.at(0);
 	f0.removeFirst();
 	QStringList f1=block_lines.value(tag,QStringList());
@@ -166,7 +166,7 @@ int Profile::load(const QString &glob_path,QStringList *err_msgs)
     return ret;
   }
 
-  QStringList f0=glob_path.split("/",Qt::KeepEmptyParts);
+  QStringList f0=glob_path.split("/",QString::KeepEmptyParts);
   QString glob_template=f0.last();
   f0.removeLast();
   QString dir_path=f0.join("/");
