@@ -5,9 +5,11 @@
 *.ddeb
 *.dsc
 *.o
-*.orig.tar.gz
+*.tar.gz
 *.tar.xz
+*.rpm
 *.service
+*.spec
 .deps
 Makefile
 Makefile.in

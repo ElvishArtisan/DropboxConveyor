@@ -85,6 +85,7 @@ else
   AC_SUBST(RPM_ROOT,/usr/src/packages)
   AC_SUBST(VENDOR,suse)
 fi 
+AC_SUBST(RPM_DATESTAMP,`date +%a\ %b\ %d\ %Y`)
 
 #
 # Generated File Warnings
@@ -108,6 +109,7 @@ AC_CONFIG_FILES([ \
     systemd/dbconvd.service \
     systemd/Makefile \
     build_debs.sh \
+    dropbox-conveyor.spec \
     Makefile \
 ])
 AC_OUTPUT()
