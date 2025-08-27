@@ -21,3 +21,5 @@
 ## Use automake to process this into a Makefile.in
 
 EXTRA_DIST = format
+
+MAINTAINERCLEANFILES = Makefile.in
