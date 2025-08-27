@@ -25,4 +25,5 @@ depcomp
 install-sh
 missing
 moc_*
+src/compat.h
 src/dbconvd
