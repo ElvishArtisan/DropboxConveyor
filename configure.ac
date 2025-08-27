@@ -15,6 +15,17 @@ AC_SUBST(RPM_RELEASE,1)
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
 #
+# Option Switches
+#
+AC_ARG_WITH(qt5,[  --with-qt5              force build using Qt v5],[REQUIRE_QT5=yes],[])
+AC_ARG_WITH(qt6,[  --with-qt6              force build using Qt v6],[REQUIRE_QT6=yes],[])
+if test $REQUIRE_QT5 ; then
+  if test $REQUIRE_QT6 ; then
+    AC_MSG_ERROR(['--with-qt5' and '--with-qt6' arguments are mutually exclusive])
+  fi
+fi
+
+#
 # Basic Compiler Checks
 #
 AC_PROG_CXX
@@ -34,11 +45,25 @@ AR_GET_DISTRO()
 AC_SUBST(DISTRO,$ar_gcc_distro)
 
 #
-# Check for Qt5 (Mandatory)
+# Check for Qt (Mandatory)
 #
-PKG_CHECK_MODULES(QT5,Qt5Core Qt5Gui Qt5Widgets Qt5Network,[],[AC_MSG_ERROR([*** Qt5 not found ***])])
-AC_CHECK_PROG(MOC_NAME,moc-qt5,[moc-qt5],[moc])
-AC_SUBST(QT5_MOC,$MOC_NAME)
+if test -z $REQUIRE_QT5 ; then
+  AQ_FIND_QT6(QT,Core Gui Widgets Network,[USING_QT6=yes],[])
+  if test $USING_QT6 ; then
+    AC_SUBST(QT_STD_ARGS,-std=c++17)
+  else
+    if test $REQUIRE_QT6 ; then
+      AC_MSG_ERROR([*** Qt6 not found ***])
+    fi
+  fi
+fi
+if test -z $USING_QT6 ; then
+  PKG_CHECK_MODULES(QT,Qt5Core Qt5Gui Qt5Widgets Qt5Network,[],[AC_MSG_ERROR([*** Qt5 not found ***])])
+  AC_SUBST(QT_STD_ARGS,-std=c++14)
+  AC_CHECK_PROG(MOC_NAME,moc-qt5,[moc-qt5],[moc])
+  AC_SUBST(QT_MOC,$MOC_NAME)
+  USING_QT5=yes
+fi
 
 #
 # Configure RPM Build
@@ -83,6 +108,17 @@ AC_CONFIG_FILES([ \
 AC_OUTPUT()
 chmod 755 build_debs.sh
 
+AC_MSG_NOTICE()
+AC_MSG_NOTICE("|-----------------------------------------------------|")
+AC_MSG_NOTICE("|    *** DropboxConveyor CONFIGURATION SUMMARY ***    |")
+AC_MSG_NOTICE("|-----------------------------------------------------|")
+if test $USING_QT5 ; then
+AC_MSG_NOTICE("|                   Using Qt Major Version ... 5.x    |")
+fi
+if test $USING_QT6 ; then
+AC_MSG_NOTICE("|                   Using Qt Major Version ... 6.x    |")
+fi
+AC_MSG_NOTICE("|-----------------------------------------------------|")
 AC_MSG_NOTICE()
 AC_MSG_NOTICE(Now enter 'make' to build the software.)
 AC_MSG_NOTICE()

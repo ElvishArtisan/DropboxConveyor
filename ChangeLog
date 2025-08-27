@@ -17,3 +17,5 @@
 	'systemd/dbconvd.service.in'.
 2025-08-27 Fred Gleason <fredg@paravelsystems.com>
 	* Modified build to work with Qt5.
+2025-08-27 Fred Gleason <fredg@paravelsystems.com>
+	* Modified build system to support both Qt5 and Qt6.

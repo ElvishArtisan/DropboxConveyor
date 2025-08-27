@@ -20,9 +20,9 @@
 ##
 ## Use automake to process this into a Makefile.in
 
-AM_CPPFLAGS = -Wall -DPREFIX=\"$(prefix)\" -I$(top_srcdir)/src -Wno-strict-aliasing -std=c++14 -fPIC @QT5_CFLAGS@
+AM_CPPFLAGS = -Wall -DPREFIX=\"$(prefix)\" -I$(top_srcdir)/src -Wno-strict-aliasing @QT_STD_ARGS@ -fPIC @QT_CFLAGS@
 LIBS = -L$(top_srcdir)/src/drouter
-MOC = @QT5_MOC@
+MOC = @QT_MOC@
 
 # The dependency for qt's Meta Object Compiler (moc)
 moc_%.cpp:	%.h
@@ -38,7 +38,7 @@ dist_dbconvd_SOURCES = cmdswitch.cpp cmdswitch.h\
 
 nodist_dbconvd_SOURCES = moc_dbconvd.cpp
 
-dbconvd_LDADD = @QT5_LIBS@
+dbconvd_LDADD = @QT_LIBS@
 
 CLEANFILES = *~\
              moc_*\
