@@ -28,6 +28,7 @@
 #include <QStringList>
 #include <QTextStream>
 
+#include "compat.h"
 #include "profile.h"
 
 #define __PROFILE_SECTION_ID_DELIMITER "|"
@@ -67,7 +68,7 @@ bool Profile::addSource(const QStringList &values)
     }
     else {
       if((!line.isEmpty())&&(line.left(1)!=";")&&(line.left(1)!="#")) {
-	QStringList f0=line.split("=",QString::KeepEmptyParts);
+	QStringList f0=line.split("=",COMPAT_QT_KEEP_EMPTY_PARTS);
 	QString tag=f0.at(0);
 	f0.removeFirst();
 	QStringList f1=block_lines.value(tag,QStringList());
@@ -166,7 +167,7 @@ int Profile::load(const QString &glob_path,QStringList *err_msgs)
     return ret;
   }
 
-  QStringList f0=glob_path.split("/",QString::KeepEmptyParts);
+  QStringList f0=glob_path.split("/",COMPAT_QT_KEEP_EMPTY_PARTS);
   QString glob_template=f0.last();
   f0.removeLast();
   QString dir_path=f0.join("/");

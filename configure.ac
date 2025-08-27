@@ -51,6 +51,8 @@ if test -z $REQUIRE_QT5 ; then
   AQ_FIND_QT6(QT,Core Gui Widgets Network,[USING_QT6=yes],[])
   if test $USING_QT6 ; then
     AC_SUBST(QT_STD_ARGS,-std=c++17)
+    AC_SUBST(COMPAT_QT_KEEP_EMPTY_PARTS,Qt::KeepEmptyParts)
+    AC_SUBST(COMPAT_QT_SKIP_EMPTY_PARTS,Qt::SkipEmptyParts)
   else
     if test $REQUIRE_QT6 ; then
       AC_MSG_ERROR([*** Qt6 not found ***])
@@ -60,6 +62,8 @@ fi
 if test -z $USING_QT6 ; then
   PKG_CHECK_MODULES(QT,Qt5Core Qt5Gui Qt5Widgets Qt5Network,[],[AC_MSG_ERROR([*** Qt5 not found ***])])
   AC_SUBST(QT_STD_ARGS,-std=c++11)
+    AC_SUBST(COMPAT_QT_KEEP_EMPTY_PARTS,QString::KeepEmptyParts)
+    AC_SUBST(COMPAT_QT_SKIP_EMPTY_PARTS,QString::SkipEmptyParts)
   AC_CHECK_PROG(MOC_NAME,moc-qt5,[moc-qt5],[moc])
   AC_SUBST(QT_MOC,$MOC_NAME)
   USING_QT5=yes
@@ -99,6 +103,7 @@ AC_CONFIG_FILES([ \
     debian/Makefile \
     debian/source/Makefile \
     helpers/Makefile \
+    src/compat.h \
     src/Makefile \
     systemd/dbconvd.service \
     systemd/Makefile \

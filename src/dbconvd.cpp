@@ -28,6 +28,7 @@
 #include <QDir>
 
 #include "cmdswitch.h"
+#include "compat.h"
 #include "dbconvd.h"
 
 MainObject::MainObject()
@@ -193,9 +194,9 @@ bool MainObject::IsMounted(const QString &mntpt)
   if((f=fopen("/etc/mtab","r"))!=NULL) {
     while(fgets(line,1023,f)!=NULL) {
       QStringList f0=
-	QString::fromUtf8(line).trimmed().split("\n",QString::SkipEmptyParts);
+	QString::fromUtf8(line).trimmed().split("\n",COMPAT_QT_SKIP_EMPTY_PARTS);
       for(int i=0;i<f0.size();i++) {
-	QStringList f1=f0.at(i).trimmed().split(" ",QString::SkipEmptyParts);
+	QStringList f1=f0.at(i).trimmed().split(" ",COMPAT_QT_SKIP_EMPTY_PARTS);
 	if(f1.size()>=2) {
 	  if(f1.at(1)==mntpt) {
 	    fclose(f);

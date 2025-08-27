@@ -21,3 +21,5 @@
 	* Modified build system to support both Qt5 and Qt6.
 2025-08-27 Fred Gleason <fredg@paravelsystems.com>
 	* Fixed bugs that broke the build against Qt 5.9.
+2025-08-27 Fred Gleason <fredg@paravelsystems.com>
+	* Added Qt version compatibility definitions in 'src/compat.h.in'.

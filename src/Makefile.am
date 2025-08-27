@@ -36,9 +36,12 @@ dist_dbconvd_SOURCES = cmdswitch.cpp cmdswitch.h\
                        dbconvd.cpp dbconvd.h\
                        profile.cpp profile.h
 
-nodist_dbconvd_SOURCES = moc_dbconvd.cpp
+nodist_dbconvd_SOURCES = compat.h\
+                         moc_dbconvd.cpp
 
 dbconvd_LDADD = @QT_LIBS@
+
+EXTRA_DIST = compat.h.in
 
 CLEANFILES = *~\
              moc_*\
@@ -47,7 +50,7 @@ CLEANFILES = *~\
              *.pdb\
              *ilk
 
-DISTCLEANFILES = paths.h
+DISTCLEANFILES = compat.h
 
 MAINTAINERCLEANFILES = *~\
                        Makefile.in

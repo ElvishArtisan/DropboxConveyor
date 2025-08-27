@@ -28,6 +28,7 @@
 #include <QStringList>
 
 #include "cmdswitch.h"
+#include "compat.h"
 
 CmdSwitch::CmdSwitch(const QString &modname,const QString &modver,
 		     const QString &usage)
@@ -46,7 +47,7 @@ CmdSwitch::CmdSwitch(const QString &modname,const QString &modver,
 	     usage.toUtf8().constData());
       exit(0);
     }
-    QStringList f0=value.split("=",QString::KeepEmptyParts);
+    QStringList f0=value.split("=",COMPAT_QT_KEEP_EMPTY_PARTS);
     if(f0.size()>=2) {
       if(f0.at(0).left(1)=="-") {
 	switch_keys.push_back(f0.at(0));
