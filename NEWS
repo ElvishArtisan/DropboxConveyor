@@ -1,6 +1,10 @@
 This is the NEWS file for the dropbox-conveyor package.
 
 -----------------------------------------------------------------------------
+v1.0.0rc2 - 28 August 2025
+
+Added support for building with Qt5.
+-----------------------------------------------------------------------------
 v1.0.0rc1 - 7 April 2025
 
 Cleaned up spam in the syslog.

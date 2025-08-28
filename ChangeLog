@@ -27,3 +27,5 @@
 	* Added a 'make rpm' target.
 2025-08-28 Fred Gleason <fredg@paravelsystems.com>
 	* Updated 'INSTALL'.
+2025-08-28 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 1.0.0rc2.
