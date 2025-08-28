@@ -25,3 +25,5 @@
 	* Added Qt version compatibility definitions in 'src/compat.h.in'.
 2025-08-27 Fred Gleason <fredg@paravelsystems.com>
 	* Added a 'make rpm' target.
+2025-08-28 Fred Gleason <fredg@paravelsystems.com>
+	* Updated 'INSTALL'.

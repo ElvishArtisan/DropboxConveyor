@@ -10,8 +10,8 @@ MANDATORY PREREQUISITES
 You will need the following installed and configured properly on your
 system before building x11vnc-auto:
 
-Qt6 Toolkit, development toolkit, v6.2.4 or higher. See
-https://www.qt.io/product/qt6
+Qt5 or Qt6 Toolkit, development toolkit, v5.9 or higher. See
+https://www.qt.io/product
 
 Building the Package
 --------------------
